@@ -36,6 +36,7 @@ To use the program user must register by verifying Google account. All data of t
 - Authentication
 - Cloud Firestore
 - Cloud Storage
+- Cloud Messaging
 - Cloud Functions:
 	- [sending a welcome email to a newly registered user](https://github.com/firebase/functions-samples/tree/master/quickstarts/email-users);
 	- [sending a farewell email to a user who has left the program](https://github.com/firebase/functions-samples/tree/master/quickstarts/email-users);
@@ -43,7 +44,5 @@ To use the program user must register by verifying Google account. All data of t
 	- [remove all user data (personal data, chat, images) from Cloud Firestore and Cloud Store after sign out a user](https://github.com/Matatov1989/Movere-Firebase-Cloud-Functions/tree/master/cleanup%20user%20data);
 	- [sending FCM notifications to inactive users. The script runs every day on the link](https://github.com/Matatov1989/Movere-Firebase-Cloud-Functions/tree/master/reminder%20about%20visit);
 	- [removing old events (location, time, picture, etc.) from Cloud Firestore and Cloud Store. Every hour the script is launched by the link](https://github.com/Matatov1989/Movere-Firebase-Cloud-Functions/tree/master/remove%20old%20events);
-- Cloud Messaging
-- Dynamic Links
 
 ---
