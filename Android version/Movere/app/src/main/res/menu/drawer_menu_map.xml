@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navContacts"
+            android:icon="@drawable/ic_baseline_contacts_24"
+            android:title="@string/navContacts" />
+
+        <item
+            android:id="@+id/navEvents"
+            android:icon="@drawable/ic_baseline_event_24"
+            android:title="@string/navEvent" />
+
+        <item
+            android:id="@+id/navAboutProgram"
+            android:icon="@drawable/ic_baseline_info_24"
+            android:title="@string/navAboutProgram" />
+
+        <item
+            android:id="@+id/navShare"
+            android:icon="@drawable/ic_baseline_share_24"
+            android:title="@string/navShare" />
+
+        <item
+            android:id="@+id/navFeedback"
+            android:icon="@drawable/ic_baseline_star_24"
+            android:title="@string/navFeedback" />
+
+    </group>
+</menu>

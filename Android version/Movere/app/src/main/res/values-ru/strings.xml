@@ -1,0 +1,205 @@
+<resources>
+    <string name="app_name">Movere</string>
+
+    <string name="titleAboutProgram">О программе</string>
+    <string name="titleContacts">Контакты</string>
+    <string name="titleEvents">События</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="hintTypeMessage">Введите текст...</string>
+    <string name="hintTypeName">Имя</string>
+    <string name="hintTypePhone">Телефон (не обязательно)</string>
+
+    <string name="hintTitleEvent">Название события...</string>
+    <string name="hintDescriptionEvent">Описание события...</string>
+    <string name="hintSpinnerVehicle">Вы водитель...</string>
+
+
+    <string name="loading">Loading</string>
+    <string name="please_wait">Please wait...</string>
+
+
+    <string name="markerSnippet">Ты</string>
+
+    <string name="toastAuthFailed">Ошибка аутентификации.</string>
+    <string name="toastAuthFinish">Авторизации завершена.</string>
+    <string name="toastPickFinish">Загрузка завершена.</string>
+    <string name="toastEnterName">Пожалуйста введите Ваше имя!</string>
+    <string name="toastDelAccount">Ваша учетная запись удалена.</string>
+    <string name="toastDelAccountError">Во время удаления учетной записи произошла ошибка. Попробуйте еще раз.</string>
+    <string name="toasNotAuth">Вы не авторизованы.</string>
+    <string name="toasAddFriend">добавлен.</string>
+    <string name="toasDelFriend">удален.</string>
+    <string name="toasDontHaveChat">История сообщений пуста.</string>
+    <string name="toasRemoveChat">Чат успешно удален.</string>
+    <string name="toasRemoveChatError">Во время удаления переписки произошла ошибка. Попробуйте еще раз.</string>
+    <string name="toastSendMail">Отправка письма...</string>
+    <string name="toastDataUpdated">Данные обновлены.</string>
+    <string name="toastSendSOS">сообщение разослано</string>
+    <string name="toastStartEvent">установите дату начало события</string>
+    <string name="toastStopEvent">установите дату завершение события</string>
+    <string name="toastCannotChangeData">в данный момент вы не можете изменять свои данные</string>
+
+
+    <string name="snackCreateEvent">событие создано</string>
+
+
+
+
+    <string name="titleInstruction">Инструкция</string>
+
+    <string name="btnOK">OK</string>
+    <string name="btnCancel">отмена</string>
+    <string name="btnContact">связаться</string>
+    <string name="btnWay">маршрут</string>
+    <string name="btnChat">написать</string>
+    <string name="btnPrivacyPolicy"><b><u>Политика Конфиденциальности</u></b>\n\n</string>
+    <string name="btnEditProfile">Изменить профиль</string>
+    <string name="btnSave">сохранить</string>
+    <string name="btnAddFriend">Добавить в друзья</string>
+    <string name="btnDelFriend">Удалить из друзей</string>
+    <string name="btnFabOnGPS">GPS вкл.</string>
+    <string name="btnFabOffGPS">GPS выкл.</string>
+    <string name="btnFabLocation">Место нахождения</string>
+    <string name="btnGetStarted">поехали</string>
+
+    <string name="checkDoNotShow">больше не показывать</string>
+
+    <string name="textName">имя:</string>
+    <string name="textPhone">телефон:</string>
+
+    <string name="textWorkersProject">Над проектом работают</string>
+    <string name="textDeleteAccount">удалить аккаунт</string>
+    <string name="textImage">картинка</string>
+    <string name="textTitleRemind">Напоминаю!</string>
+    <string name="textRadiusEvent">Событие будет доступно всем в радиусе 30 км от места назначения.</string>
+    <string name="textRadiusEventSOS">Сообщение получат все в радиусе 30 км от Вашего местоположение на карте(проверьте Ваше местоположение). Статус о помощи будет активе один час.</string>
+    <string name="textErrorAddress">введите адрес</string>
+    <string name="textErrorEventTitle">введите название события</string>
+    <string name="textErrorEventDescription">введите описание события</string>
+    <string name="textRemoveContact">Удалить контакт и всю переписку с ним?</string>
+    <string name="textAddress">адрес: %1$s</string>
+    <string name="textOpening">открытие: %1$s</string>
+    <string name="textClosing">закрытие: %1$s</string>
+    <string name="textRemovOldEvent">событие будет удалено автоматически в течении суток по истечении установленой даты завершения события</string>
+
+
+    событие будет удалено автоматическт в течении суток по истечении установленой даты завершения собыьтя
+
+
+
+
+    <string name="navInstructions">Инструкция</string>
+    <string name="navShare">Посоветовать друзьям</string>
+    <string name="navAboutProgram">О программе</string>
+    <string name="navFromDeveloper">Еще от разработчика</string>
+    <string name="navFeedback">Оставить отзыв</string>
+    <string name="navPlaceFriend">Место на карте</string>
+    <string name="navWay">Маршрут</string>
+    <string name="navContacts">Контакты</string>
+    <string name="navSOS">Сигнал SOS</string>
+    <string name="navEvent">События</string>
+    <string name="navViewAllUsers">Все пользователи</string>
+
+
+    <string name="dialogProgressAuth">Пожалуйста подождите\nзавершения авторизации.</string>
+    <string name="dialogProgressAuthFinish">Авторизация завершена</string>
+
+    <string name="dialogProgressUpload">Пожалуйста подождите\nзавершения загрузки.</string>
+    <string name="dialogProgressUploadFinish">Загрузка завершена.</string>
+    <string name="dialogProgressUploadFinishError">Во время загрузки произошла ошибка. Попробуйте еще раз.</string>
+
+    <string name="dialogAuth">\t\tАвторизуйтесь пожалуйста!\n
+\t\tЭто необходимо для использования чата и карты программы.\n
+\t\tАвторизовавшись Вы соглашаетесь с нашей политикой конфиденциальности, и подтверждаете условия использования программы: Ваш электронный адрес, имя и фамилия которое записано в Вашем аккаунте электронного адреса, и месторасположения будут использоваться в программе.\n
+</string>
+
+    <string name="dialogInstruction">\t\tДобро пожаловать в Movere!!!\n\n
+    \t\tПрограмма предназначена для помощи мотоциклистам в пути, или на отдыхе. А так же в поиске новых знакомств по общему интересу – Мотоциклы!!!!\n\n
+    \t\tПри запуске программы устройство определяет Ваше месторасположение для того что бы отметить Вас на карте. Тем самым с Вами могут связаться ближайшие или мимо проезжающие мотоциклисты, которые так же пользуются этой программой.\n\n
+    \t\tВ программе предусмотрены статусы:\n
+    \t\t\t1)Хочу кататься;\n
+    \t\t\t2)В пути;\n
+    \t\t\t3)Дома;\n
+    \t\t\t4)Sos;\n
+    \t\t\t5)С друзьями;\n\n
+    \t\tУказав статус Вы показываете на карте другим участникам программы Ваше состояние на текущее время.\n\n
+    \t\tВ программке предусмотрен chat-room и прокладка маршрута. Для того чтобы связаться с другим мотоциклистом или проложить до него маршрут, Вам нужно просто выбрать мотоциклиста на карте и выбрать нужную Вам функцию.\n\n
+    \t\tСпасибо что выбрали нас!!!\n\n
+    \t\tПользуйтесь, комментируйте, пишите свои пожелания в комментариях или лично нам!!! Давайте вместе сделаем программу лучше!!!\n\n
+</string>
+
+
+    <string name="dialogDelAccount">Вы действительно хотите удалить учетную запись и покинуть программу?</string>
+    <string name="dialogAddNewFriends">У Вас нет друзей! Добавляйте друзей в Ваш список или пригласите своих друзей в программу.</string>
+    <string name="dialogDelFriends">Вы уверены, что хотите удалить друга из списка?</string>
+
+
+    <array name="arrWorkers">
+        <item>Вадим Мататов</item>
+        <item>Никита Мататов</item>
+        <item>Юрка Мататов</item>
+    </array>
+
+    <array name="arrMails">
+        <item>Matatvolga@gmail.com</item>
+        <item>Docmat63@gmail.com</item>
+        <item>Matatov1989@gmail.com</item>
+    </array>
+
+
+    <string name="textSOS">SOS</string>
+
+    <!-- new -->
+
+    <array name="arrTypeVehicle">
+        <item>Коляски</item>
+        <item>Мотоцикла</item>
+        <item>Автомобиля</item>
+        <item>Грузовика</item>
+        <item>SOS</item>
+    </array>
+
+    <string name="textTypeVehicle">Водитель %1$s</string>
+    <string name="textLastVisit">Последний визит:</string>
+
+    <string name="textNeedsHelp">%1$s нуждается в помощи.</string>
+
+    <string name="googleMapsAPI">AIzaSyAi7AvWBBJvFj1tAKJcpbDBU4QIERcPYcU</string>
+
+    <string name="actionNewEvent">новое событие</string>
+
+    <string name="textErrorName">введите своё имя</string>
+
+
+
+
+    <!-- for intro activity   -->
+    <string name="screenTitle1">Добро пожаловать!</string>
+    <string name="screenTitle2">Выбрать календарь.</string>
+
+
+    <string name="screenDesc1">Спасибо что выбрали Календарь Клиентов. Я надеюсь, Вам понравится использование этой программы. Но для начала работы с программой необходимо выполнить одну самую простую и важную инструкцию...</string>
+    <string name="screenDesc2">Вам необходимо выбрать календарь в панели навигации, без этого программа работать не будет. Все события будут хранится в выбранном календаре Вашей учетной записи. И вам не стоит переживать о экспорте/импорте внесённых данных в случае приобретения нового устройства.</string>
+
+
+    <string name="strProgressBar">Пожалуйста подождите...</string>
+
+
+    <string name="toastError">Произошла ошибка. Попробуйте еще раз.</string>
+    <string name="toastAuthError">Во время авторизации произошла ошибка. Попробуйте еще раз.</string>
+    <string name="toastMessageError">Сообщение не доставлено.</string>
+    <string name="toastRemoveContact">Контакт с чатом удален.</string>
+
+    <string name="dialogPermissionLocation">Если вы хотите чтобы вас видели другие участники программы, вам необходимо дать разрешение на геолокацию.</string>
+
+
+    <string name="textVersion">Версия: 2.0 alpha</string>
+
+    <string name="textUserNeedsHelp">%1$s Нуждается в помощи!!!</string>
+</resources>

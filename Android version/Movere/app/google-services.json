@@ -1,0 +1,104 @@
+{
+  "project_info": {
+    "project_number": "865199574649",
+    "firebase_url": "https://movere-point.firebaseio.com",
+    "project_id": "movere-point",
+    "storage_bucket": "movere-point.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:865199574649:android:f912075c2b027661",
+        "android_client_info": {
+          "package_name": "com.matatov.movere"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "865199574649-qvst52gl3875ctqmlae6hp3r4ugm5gba.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.matatov.movere",
+            "certificate_hash": "9ad7919f669544806e9ffda7a4f976af72f6d3ef"
+          }
+        },
+        {
+          "client_id": "865199574649-jm61hr2mpu83fb1lvg0g3qvnq4jf7e14.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.matatov.movere",
+            "certificate_hash": "0f7b7b05609398bfb6d8ff43e81753560c477413"
+          }
+        },
+        {
+          "client_id": "865199574649-o5jkj99odnreqigqn01224c03lhndp1s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.matatov.movere",
+            "certificate_hash": "1f6af6354b17649d3d89800150d13f05877f2393"
+          }
+        },
+        {
+          "client_id": "865199574649-8l4t9k6r0asej80l2fcv1ihf6epvn25v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.matatov.movere",
+            "certificate_hash": "995d6b4ff6f988d5c83e23f31d0e32218b432200"
+          }
+        },
+        {
+          "client_id": "865199574649-f493k6k5juaacub4tbva29gqn1r6nde8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.matatov.movere",
+            "certificate_hash": "16d883d872cee10f26721dae9f51a8f35dfbab93"
+          }
+        },
+        {
+          "client_id": "865199574649-13p7fti4thjbfbs69dm0vv5gjfqnjj69.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.matatov.movere",
+            "certificate_hash": "c468927f44ed13a7282e279d87efea30d065d43b"
+          }
+        },
+        {
+          "client_id": "865199574649-6jt44gq9m0c5cu4a6smoscl297uvn38h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.matatov.movere",
+            "certificate_hash": "0f469cfd5eb7c3bc506c1354a8c347273014d775"
+          }
+        },
+        {
+          "client_id": "865199574649-a9g6gkin4p0fg3mul3pa747n21225rvk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.matatov.movere",
+            "certificate_hash": "5cf2d03a5d11bf536f784f503f84701c1e84e01a"
+          }
+        },
+        {
+          "client_id": "865199574649-f5thfjg5te6pnovvibdm6fcpafvcm12h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgaRpCc4-36-VuAhD5ddAJsMzHQWzuklQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "865199574649-f5thfjg5te6pnovvibdm6fcpafvcm12h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
