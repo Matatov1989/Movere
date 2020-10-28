@@ -3,8 +3,8 @@
 ---
 
 ### Platforms:
-- [Android](https://github.com/Matatov1989/Movere-Android);
-- [WEB](https://github.com/Matatov1989/Movere-WEB);
+- [Android](https://github.com/Matatov1989/Movere/tree/master/Android%20version);
+- [WEB](https://github.com/Matatov1989/Movere/tree/master/WEB%20version);
 
 ---
 
