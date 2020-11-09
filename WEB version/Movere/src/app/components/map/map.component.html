@@ -1,0 +1,66 @@
+<mat-toolbar>
+
+
+
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+
+
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <agm-map>
+          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+<!--
+            <agm-marker
+              *ngFor="let user of users; let i = index"
+              [latitude]="user.l.latitude"
+              [longitude]="user.l.longitude">
+            </agm-marker>
+            -->
+        </agm-map>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <mat-card>
+      <ng-template #noMessages>
+        <div class="no-messages">
+          <img src="/assets/img/svg/ic_chat.svg" />
+          <span class="title">No new message?</span>
+          <span class="info">Send your first message below.</span>
+        </div>
+      </ng-template>
+
+      <div class="main">
+        <div class="user-info">gogy</div>
+        <div *ngIf="messages && messages[0]; else noMessages" class="messages-container" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+          <ul>
+            <li *ngFor="let message of messages" [style.flex-direction]="message.sender.uid === authService.currentUser.uid ? 'row-reverse' : 'row'">
+              <img [src]="message.sender.avatar" width="36px" height="37px" />
+              <span [ngClass]="message.sender.uid === authService.currentUser.uid ? 'speech-bubble-own' : 'speech-bubble'">{{ message.text }}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="input-container">
+          <input placeholder="Type something" #messageInput (keydown.enter)="onSendMessage(messageInput.value); messageInput.value = ''"/>
+  <!--    <input matInput placeholder="Ex. Pizza" value="Sushi"> -->
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

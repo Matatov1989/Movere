@@ -1,0 +1,234 @@
+<div class="content">
+	<h1>{{titlePage}}</h1>
+	<h2>{{titleWorkers}}</h2>
+
+	<div class="card-deck">
+	  <div class="card">
+	    <img src="{{workerVadim.image}}" class="card-img-top rounded " alt="...">
+	    <div class="card-body">
+				<h5 class="card-title">{{workerVadim.name}}</h5>
+				<p class="card-text">{{workerVadim.profession}}</p>
+				<p class="card-text">{{workerVadim.positionMovere}}</p>
+	    </div>
+			<div class="card-footer">
+					<div class="social_buttons">
+						<ul>
+							<li><a href="{{workerVadim.linkedinLink}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+							<li><a data-toggle="modal" data-target="#skypeVadim"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+							<li><a data-toggle="modal" data-target="#gmailVadim"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+							<li><a data-toggle="modal" data-target="#whatsAppVadim"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+						</ul>
+				</div>
+			</div>
+	  </div>
+
+		<div class="card">
+	    <img src="{{workerNikita.image}}" class="card-img-top rounded" width="200px" height="200px">
+	    <div class="card-body">
+				<h5 class="card-title">{{workerNikita.name}}</h5>
+				<p class="card-text">{{workerNikita.profession}}</p>
+				<p class="card-text">{{workerNikita.positionMovere}}</p>
+	    </div>
+			<div class="card-footer">
+					<div class="social_buttons">
+						<ul>
+							<li><a href="{{workerNikita.linkedinLink}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+							<li><a data-toggle="modal" data-target="#skypeNikita"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+							<li><a data-toggle="modal" data-target="#gmailNikita"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+							<li><a data-toggle="modal" data-target="#whatsAppNikita"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+						</ul>
+				</div>
+			</div>
+	  </div>
+
+	  <div class="card">
+	    <img src="{{workerYury.image}}" class="card-img-top rounded " alt="...">
+	    <div class="card-body">
+				<h5 class="card-title">{{workerYury.name}}</h5>
+				<p class="card-text">{{workerYury.profession}}</p>
+				<p class="card-text">{{workerYury.positionMovere}}</p>
+	    </div>
+	    <div class="card-footer">
+					<div class="social_buttons">
+						<ul>
+							<li><a href="{{workerYury.linkedinLink}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+							<li><a data-toggle="modal" data-target="#skypeYura"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+							<li><a data-toggle="modal" data-target="#gmailYura"><i class="fa fa-google" aria-hidden="true"></i></a></li>
+							<li><a data-toggle="modal" data-target="#whatsAppYura"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+						</ul>
+				</div>
+	    </div>
+	  </div>
+	</div>
+
+
+	<!-- dialog Vadim -->
+	<div id="skypeVadim" class="modal fade" tabindex="-1">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Skype address:</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">{{workerVadim.skypeName}}</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary" data-dismiss="modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="gmailVadim" class="modal fade" tabindex="-1">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">gmail address:</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">{{workerVadim.gmailAdres}}</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary" data-dismiss="modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="whatsAppVadim" class="modal fade" tabindex="-1">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">WhatsApp number:</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">+{{workerVadim.whatsAppNumber}}</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary" data-dismiss="modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- dialog Nikita -->
+	<div id="skypeNikita" class="modal fade" tabindex="-1">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title">Skype address:</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+	      </div>
+	      <div class="modal-body">{{workerNikita.skypeName}}</div>
+	      <div class="modal-footer">
+	        <button class="btn btn-primary" data-dismiss="modal">OK</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div id="gmailNikita" class="modal fade" tabindex="-1">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title">gmail address:</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+	      </div>
+	      <div class="modal-body">{{workerNikita.gmailAdres}}</div>
+	      <div class="modal-footer">
+	        <button class="btn btn-primary" data-dismiss="modal">OK</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div id="whatsAppNikita" class="modal fade" tabindex="-1">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">WhatsApp number:</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">{{workerNikita.whatsAppNumber}}</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary" data-dismiss="modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- dialog Yura -->
+	<div id="skypeYura" class="modal fade" tabindex="-1">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title">Skype address:</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+	      </div>
+	      <div class="modal-body">{{workerYury.skypeName}}</div>
+	      <div class="modal-footer">
+	        <button class="btn btn-primary" data-dismiss="modal">OK</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div id="gmailYura" class="modal fade" tabindex="-1">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title">gmail address:</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+	      </div>
+	      <div class="modal-body">{{workerYury.gmailAdres}}</div>
+	      <div class="modal-footer">
+	        <button class="btn btn-primary" data-dismiss="modal">OK</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div id="whatsAppYura" class="modal fade" tabindex="-1">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">WhatsApp number:</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">{{workerYury.whatsAppNumber}}</div>
+				<div class="modal-footer">
+					<button class="btn btn-primary" data-dismiss="modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal window gmail address is Yura
+	<div class="modal fade" id="gmailYura" role="dialog">
+		<div class="modal-dialog">
+
+				<!-- Modal content
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">gmail address:</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+					</div>
+					<div class="modal-body">
+						<p>Matatov1989@gmail.com</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+-->
+
+<!--
+	<script>
+  	$('#myModal').modal("toggle");
+
+  	$('#myModal').on('shown.bs.modal', function (event) {
+	  // функции
+  	alert ("Выполенно");
+  });
+</script>
+-->

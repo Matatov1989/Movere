@@ -1,0 +1,72 @@
+<div class="container">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand">
+        <img src="/assets/img/logo-ic.png" width="50" height="50" class="d-inline-block" alt="">
+          <span class="navbar-brand mb-0 h1">{{title}}</span>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link text-dark" routerLink="/">{{navBtnHome}}</a>
+          <a class="nav-item nav-link text-dark" routerLink="/about">{{navBtnAbout}}</a>
+<!--
+          <div *ngIf="auth.user$ | async as user; else loginMap">
+            <a class="nav-item nav-link text-dark" routerLink="/maps">{{navBtnMaps}}</a>
+          </div>
+-->
+          <ng-template #loginMap>
+            <a class="nav-item nav-link text-dark" routerLink="" data-toggle="modal" data-target="#dialogAuth">{{navBtnMaps}}</a>
+          </ng-template>
+
+          <a class="nav-item nav-link text-dark" href="#downloadBlock" SimpleSmoothScroll [showHash]="true">{{navBtnDownload}}</a>
+
+        </div>
+      </div>
+      <form class="form-inline">
+<!--
+        <button class="from-control mr-sm-2 btn btn-primary btn-md" (click)="auth.googleSignin()" type="button">{{btnSignUp}}</button>
+        <img class="my-2 my-sm-0 img-circle" width="65px" height="65px" src="/assets/img/svg/ic_profile.svg">
+-->
+<!--
+        <div *ngIf="auth.user$ | async as user; else login">
+          <button class="from-control mr-sm-2 btn btn-primary btn-md" (click)="auth.signOut()" type="button">Sign Out</button>
+          <img class="my-2 my-sm-0 rounded-circle" width="65px" height="65px" src="{{user.userUriPhoto}}">
+        </div>
+
+        <ng-template #login>
+          <button class="from-control mr-sm-2 btn btn-primary btn-md" (click)="auth.googleSignin()" type="button">{{btnSignUp}}</button>
+          <img class="my-2 my-sm-0 img-circle" width="65px" height="65px" src="/assets/img/svg/ic_profile.svg">
+        </ng-template>
+-->
+      </form>
+    </nav>
+  </header>
+
+  <hr class="featurette-divider">
+
+  <router-outlet></router-outlet>
+
+  <hr class="featurette-divider">
+
+  <footer class="container">
+    <p>© 2019 Movere   · <a class="p-2 text-dark" routerLink="/about">{{navBtnAbout}}</a> · <a class="p-2 text-dark" routerLink="/privacy">{{navBtnPrivacyPolicy}}</a></p>
+  </footer>
+
+</div>
+
+
+<!-- dialog -->
+<div id="dialogAuth" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Внимание</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">Для использования этой функции необходима регистрация!</div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

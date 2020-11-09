@@ -1,0 +1,4 @@
+@mixin full-bk($image) {
+  background: url($image) no-repeat center center fixed;
+  background-size: cover;
+}
