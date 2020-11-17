@@ -51,20 +51,12 @@ class IntroActivity : AppCompatActivity() {
 
         // fill list screen
         val mList: MutableList<ScreenItemModel> = ArrayList<ScreenItemModel>()
-        mList.add(
-            ScreenItemModel(
-                getString(R.string.screenTitle1),
-                getString(R.string.screenDesc1),
-                R.drawable.ic_intro_welcome
-            )
-        )
-        mList.add(
-            ScreenItemModel(
-                getString(R.string.screenTitle2),
-                getString(R.string.screenDesc2),
-                R.drawable.ic_intro_smiley
-            )
-        )
+        mList.add(ScreenItemModel(getString(R.string.screenTitleAuth), getString(R.string.screenDescAuth), R.drawable.ic_authentication))
+        mList.add(ScreenItemModel(getString(R.string.screenTitleNavigation), getString(R.string.screenDescNavigation), R.drawable.ic_navigation))
+        mList.add(ScreenItemModel(getString(R.string.screenTitleCommunication), getString(R.string.screenDescCommunication), R.drawable.ic_communication))
+        mList.add(ScreenItemModel(getString(R.string.screenTitleNews), getString(R.string.screenDescNews), R.drawable.ic_news))
+        mList.add(ScreenItemModel(getString(R.string.screenTitleHelp), getString(R.string.screenDescHelp), R.drawable.ic_help))
+        mList.add(ScreenItemModel(getString(R.string.screenTitleTotal), getString(R.string.screenDescTotal), R.drawable.ic_total))
 
         // setup viewpager
         screenPager = findViewById<ViewPager>(R.id.screen_viewpager)

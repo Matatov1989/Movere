@@ -6,6 +6,7 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.os.Parcelable
 import android.provider.MediaStore
+import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +16,7 @@ import com.matatov.movere.R
 import com.matatov.movere.utils.FcmBuilderUtil
 import com.matatov.movere.models.*
 import com.matatov.movere.utils.ConstantsUtil
+import com.matatov.movere.utils.ConstantsUtil.ARG_CONTACT_DATA
 import com.matatov.movere.utils.FireMessageUtil
 import com.matatov.movere.utils.FirestoreUtil
 import com.matatov.movere.utils.StorageUtil
@@ -48,7 +50,7 @@ class ChatActivity : AppCompatActivity() {
         //     setSupportActionBar(toolbar)
 
         receiverUser =
-            intent.getParcelableExtra<Parcelable>(ConstantsUtil.ARG_CONTACT_DATA) as UserModel
+            intent.getParcelableExtra<Parcelable>(ARG_CONTACT_DATA) as UserModel
         //   userModel = intent.getParcelableExtra<Parcelable>(ArgumentUtil.ARG_CONTACT_DATA) as UserModel
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -117,6 +119,8 @@ class ChatActivity : AppCompatActivity() {
 
         val pushNotif =
             PushMessageModel(senderName, message, senderName, senderUid, senderToken, receiverToken)
+
+        Log.d(ConstantsUtil.LOG_TAG, "PushMessageModel " + pushNotif.toString())
 
         FcmBuilderUtil.sendMessageToUserDevice(pushNotif) { isSuccess ->
             if (!isSuccess) {

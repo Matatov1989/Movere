@@ -42,6 +42,8 @@ import com.matatov.movere.services.SendMessagesService
 import com.matatov.movere.utils.ConstantsUtil.ARG_CONTACT_DATA
 import com.matatov.movere.utils.ConstantsUtil.LOG_TAG
 import com.matatov.movere.utils.FirestoreUtil
+import com.matatov.movere.utils.FirestoreUtil.updateUserStatus
+import com.matatov.movere.utils.FirestoreUtil.updateUserTimestamp
 import com.valdesekamdem.library.mdtoast.MDToast
 import kotlinx.android.synthetic.main.activity_map.*
 import kotlinx.android.synthetic.main.app_bar_map.*
@@ -65,6 +67,8 @@ class MapActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelected
     var textUserName: TextView? = null
     var textBtnProfileUser: TextView? = null
 
+    var flagGetData: Boolean? = false
+
     private val PERMISSION_LOCATION = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,10 +77,16 @@ class MapActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelected
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        //  Log.d(LOG_TAG, "onCreate   ")
+        Log.d(LOG_TAG, "onCreate   ")
 
-        userModel =
-            intent.getParcelableExtra<Parcelable>(SplashActivity::class.java.canonicalName) as UserModel
+
+        //get user data from SplashActivity or AuthenticationActivity
+        if (intent.hasExtra(SplashActivity::class.java.canonicalName))
+            userModel = intent.getParcelableExtra<Parcelable>(SplashActivity::class.java.canonicalName) as UserModel
+        else if (intent.hasExtra(AuthenticationActivity::class.java.canonicalName))
+            userModel = intent.getParcelableExtra<Parcelable>(AuthenticationActivity::class.java.canonicalName) as UserModel
+        else
+            flagGetData = true;
 
         //     Log.d(LOG_TAG, "onCreate   " + userModel)
 
@@ -95,23 +105,6 @@ class MapActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelected
 
         nav_view.setNavigationItemSelectedListener(this)
 
-        initMap()
-        initNavHeader()
-
-
-/*
-        FirestoreUtil.getCurrentUser(FirebaseAuth.getInstance().currentUser?.uid.toString()) { user ->
-            userModel = user
-            initNavHeader()
-        }
-*/
-        //get all users
-        FirestoreUtil.getAllUsersFromFirestore() { list ->
-            for (user in list)
-                addUserToMapMarker(user)
-
-            setCameraView()
-        }
 
         //button update user location
         fabLocation.setOnClickListener {
@@ -122,6 +115,87 @@ class MapActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelected
         fabSendSOS.setOnClickListener {
             dialogSendSOS()
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(LOG_TAG, "onStart   " )
+        initMap()
+
+        //get user data from Firestore if start activity from other activities (not SplashActivity or not AuthenticationActivity)
+        if (flagGetData!!){
+               FirestoreUtil.getCurrentUser(FirebaseAuth.getInstance().currentUser?.uid.toString()) { user ->
+                userModel = user
+                initNavHeader()
+            }
+        }
+        else {
+            initNavHeader()
+            updateUserStatus(true)  // TODO : check it here and think about if in other activities
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(LOG_TAG, "onResume   " )
+
+
+
+        //get all users
+        FirestoreUtil.getAllUsersFromFirestore() { list ->
+            for (user in list)
+                addUserToMapMarker(user)
+
+            if (!userModel!!.g.equals("7zzzzzzzzz"))
+                setCameraView()
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(LOG_TAG, "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(LOG_TAG, "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(LOG_TAG, "onDestroy")
+
+        updateUserTimestamp()
+        updateUserStatus(false)
+    }
+
+    // TODO : set this method to all activities with update user data
+    override fun onUserLeaveHint() {
+        super.onUserLeaveHint()
+        Log.d(LOG_TAG, "onUserLeaveHint")
+
+        updateUserTimestamp()
+        updateUserStatus(false)
+    }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        Log.d(LOG_TAG, "onMapReady")
+        mMap = googleMap
+        //      mMap.setOnInfoWindowClickListener(this);
+        //      mMap.setOnInfoWindowClickListener(this);
+        if (mClusterManager == null) {
+            mClusterManager = ClusterManager(applicationContext, mMap)
+        }
+        if (mClusterManagerRenderer == null) {
+            mClusterManagerRenderer = MyClusterManagerRenderer(
+                this,
+                mMap,
+                mClusterManager
+            )
+            mClusterManager!!.setRenderer(mClusterManagerRenderer)
+        }
+        mClusterManager!!.setOnClusterItemInfoWindowClickListener(this)
+        mMap.setOnInfoWindowClickListener(mClusterManager)
     }
 
     //initialization map
@@ -211,6 +285,9 @@ class MapActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelected
                         userModel!!.userId.toString(),
                         geoPoint
                     ) { isSuccess ->
+
+                        Log.d(LOG_TAG, "updateLocationUser isSuccess  " + isSuccess)
+
                         if (isSuccess)
                             setCameraView()
                         else
@@ -223,25 +300,6 @@ class MapActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelected
                     }
                 }
             }
-    }
-
-    override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
-        //      mMap.setOnInfoWindowClickListener(this);
-        //      mMap.setOnInfoWindowClickListener(this);
-        if (mClusterManager == null) {
-            mClusterManager = ClusterManager(applicationContext, mMap)
-        }
-        if (mClusterManagerRenderer == null) {
-            mClusterManagerRenderer = MyClusterManagerRenderer(
-                this,
-                mMap,
-                mClusterManager
-            )
-            mClusterManager!!.setRenderer(mClusterManagerRenderer)
-        }
-        mClusterManager!!.setOnClusterItemInfoWindowClickListener(this)
-        mMap.setOnInfoWindowClickListener(mClusterManager)
     }
 
     override fun onClusterItemInfoWindowClick(clusterMarker: ClusterMarker?) {

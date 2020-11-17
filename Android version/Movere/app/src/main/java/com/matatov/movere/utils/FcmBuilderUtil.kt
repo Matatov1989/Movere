@@ -1,5 +1,6 @@
 package com.matatov.movere.utils
 
+import android.util.Log
 import com.matatov.movere.models.PushMessageModel
 import com.squareup.okhttp.*
 import org.json.JSONException
@@ -19,14 +20,14 @@ object FcmBuilderUtil {
     private val FCM_URL = "https://fcm.googleapis.com/fcm/send"
 
     // json related keys
-    private val KEY_TO = "to"
-    private val KEY_NOTIFICATION = "notification"
-    private val KEY_TITLE = "title"
-    private val KEY_TEXT = "text"
-    private val KEY_DATA = "data"
-    private val KEY_USERNAME = "username"
-    private val KEY_UID = "uid"
-    private val KEY_FCM_TOKEN = "fcm_token"
+    const val KEY_TO = "to"
+    const val KEY_NOTIFICATION = "notification"
+    const val KEY_TITLE = "title"
+    const val KEY_TEXT = "text"
+    const val KEY_DATA = "data"
+    const val KEY_USERNAME = "username"
+    const val KEY_UID = "uid"
+    const val KEY_FCM_TOKEN = "fcm_token"
 
     private var title: String? = null
     private var message: String? = null
@@ -48,8 +49,10 @@ object FcmBuilderUtil {
         var requestBody: RequestBody? = null
         try {
             requestBody = RequestBody.create(MEDIA_TYPE_JSON, getValidJsonBody().toString())
+            Log.d(ConstantsUtil.LOG_TAG, "send sms   "+message)
         } catch (e: JSONException) {
             e.printStackTrace()
+            Log.d(ConstantsUtil.LOG_TAG, "send sms error   "+ e.printStackTrace())
         }
 
         val request = Request.Builder()
@@ -62,11 +65,13 @@ object FcmBuilderUtil {
         val call = OkHttpClient().newCall(request)
         call.enqueue(object : Callback {
             override fun onFailure(request: Request?, e: IOException?) {
+                Log.d(ConstantsUtil.LOG_TAG, "send sms onFailure   "+ e)
                 onComplete(false)
             }
 
             @Throws(IOException::class)
             override fun onResponse(response: Response) {
+                Log.d(ConstantsUtil.LOG_TAG, "send sms onResponse   "+ response.toString())
                 onComplete(true)
             }
         })

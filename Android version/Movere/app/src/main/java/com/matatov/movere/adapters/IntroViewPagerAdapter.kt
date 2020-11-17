@@ -10,7 +10,7 @@ import androidx.viewpager.widget.PagerAdapter
 import com.matatov.movere.R
 import com.matatov.movere.models.ScreenItemModel
 
-class IntroViewPagerAdapter (var context: Context, var listScreen: MutableList<ScreenItemModel>) : PagerAdapter() {
+class IntroViewPagerAdapter(var context: Context, var listScreen: MutableList<ScreenItemModel>) : PagerAdapter() {
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
 
@@ -38,6 +38,7 @@ class IntroViewPagerAdapter (var context: Context, var listScreen: MutableList<S
     }
 
     override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
-        super.destroyItem(container, position, `object`)
+   //     super.destroyItem(container, position, `object`)
+        container.removeView(`object` as View)
     }
 }

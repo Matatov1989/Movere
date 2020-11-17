@@ -14,6 +14,7 @@ object ConstantsUtil {
     const val USER_NAME = "userName"
     const val USER_PHOTO = "userUriPhoto"
     const val USER_TOKEN = "userToken"
+    const val USER_IS_ONLINE = "userIsOnline"
     const val USER_TYPE_VECHICLE = "userTypeVehicle"
     const val USER_GEO_HASH = "g"
     const val USER_GEO_POINT = "l"

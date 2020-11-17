@@ -12,6 +12,7 @@ import com.matatov.movere.adapters.ContactsRecyclerAdapter
 import com.matatov.movere.interfaces.OnResultClickPosition
 import com.matatov.movere.models.UserModel
 import com.matatov.movere.utils.ConstantsUtil
+import com.matatov.movere.utils.ConstantsUtil.ARG_CONTACT_DATA
 import com.matatov.movere.utils.ConstantsUtil.LOG_TAG
 import com.matatov.movere.utils.FireMessageUtil
 import com.matatov.movere.utils.FirestoreUtil
@@ -33,6 +34,10 @@ class ContactsActivity : AppCompatActivity(), OnResultClickPosition.Contact {
 
         //get all contacts (friends)
         FirestoreUtil.getContacts(FirebaseAuth.getInstance().currentUser?.uid.toString()){ contactList ->
+
+            //sort list by alphabet
+            contactList.sortBy { it.userName }
+
             recyclerAdapter = ContactsRecyclerAdapter(this, contactList)
 
             recyclerContact!!.adapter = recyclerAdapter
@@ -57,9 +62,7 @@ class ContactsActivity : AppCompatActivity(), OnResultClickPosition.Contact {
     }
 
     override fun onClickPosition(contact: UserModel) {
-        val intent = Intent(applicationContext, ChatActivity::class.java)
-        intent.putExtra(ConstantsUtil.ARG_CONTACT_DATA, contact)
-        startActivity(intent)
+        startActivity(Intent(applicationContext, ChatActivity::class.java).putExtra(ARG_CONTACT_DATA, contact))
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
     }
 
